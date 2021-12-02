@@ -1,0 +1,69 @@
+#Eth_GetBlockByNumber
+---
+#ethGetBlockByNumber -- Successful
+"case_name": "ethGetBlockByNumber -- Successful"
+#url地址
+"url": "/api/v1/rpc/ethereum?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getBlockByNumber"
+  params: ["0x6c597f",true]
+  id: "0"
+"except":
+  code: 200
+  errDsc: "0xc86659893e8c2601b0219528c69b111c5d9c1416c3aed8ff71f3345b6b03edcd"
+---
+#ethGetBlockByNumber -- INVALID API KEY
+"case_name": "ethGetBlockByNumber -- INVALID API KEY"
+#url地址
+"url": "/api/v1/rpc/ethereum?apiKey=148458df-9a25-43b4-bf19-878d42cf"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getBlockByNumber"
+  params: ["0x6c597f",true]
+  id: "0"
+"except":
+  code: 401
+  errDsc: {"error":"INVALID API KEY: 148458df-9a25-43b4-bf19-878d42cf"}
+---
+#ethGetBlockByNumber -- INVALID method
+"case_name": "ethGetBlockByNumber -- INVALID method"
+#url地址
+"url": "/api/v1/rpc/ethereum?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_BlockBy"
+  params: ["0x6c597f",true]
+  id: "0"
+"except":
+  code: 200
+  errDsc: {"jsonrpc":"2.0","id":"0","error":{"code":-32601,"message":"the method eth_BlockBy does not exist/is not available"}}
+---
+#ethGetBlockByNumber -- INVALID params
+"case_name": "ethGetBlockByNumber -- INVALID params"
+#url地址
+"url": "/api/v1/rpc/ethereum?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getBlockByNumber"
+  params: ["x5",true]
+  id: "0"
+"except":
+  code: 200
+  errDsc: {"jsonrpc":"2.0","id":"0","error":{"code":-32602,"message":"invalid argument 0: hex string without 0x prefix"}}

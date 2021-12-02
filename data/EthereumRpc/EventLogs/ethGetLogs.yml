@@ -1,0 +1,86 @@
+#Eth_GetLogs
+---
+#ethGetLogs -- Successful
+"case_name": "ethGetLogs -- Successful"
+#url地址
+"url": "/api/v1/rpc/ethereum?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getLogs"
+  params: [{"topics":[{"address": "0x8A8610B1444127Aa0B2b90Eeb5633794f902C535","topics": ["0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"],"blockHash": "0x8243343df08b9751f5ca0c5f8c9c0460d8a9b6351066fae0acbd4d3e776de8bb"}]}]
+  id: "0"
+"except":
+  code: 200
+  errDsc:
+---
+#ethGetLogs -- INVALID API KEY
+"case_name": "ethGetLogs -- INVALID API KEY"
+#url地址
+"url": "/api/v1/rpc/ethereum?apiKey=148458df-9a25-43b4-bf19-878d42cf"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getLogs"
+  params: [{"topics":[{"address": "0x8A8610B1444127Aa0B2b90Eeb5633794f902C535","topics": ["0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"],"blockHash": "0x8243343df08b9751f5ca0c5f8c9c0460d8a9b6351066fae0acbd4d3e776de8bb"}]}]
+  id: "0"
+"except":
+  code: 401
+  errDsc: {"error":"INVALID API KEY: 148458df-9a25-43b4-bf19-878d42cf"}
+---
+#ethGetLogs -- INVALID method
+"case_name": "ethGetLogs -- INVALID method"
+#url地址
+"url": "/api/v1/rpc/ethereum?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getBlock"
+  params: [{"topics":[{"address": "0x8A8610B1444127Aa0B2b90Eeb5633794f902C535","topics": ["0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"],"blockHash": "0x8243343df08b9751f5ca0c5f8c9c0460d8a9b6351066fae0acbd4d3e776de8bb"}]}]
+  id: "0"
+"except":
+  code: 200
+  errDsc: {"jsonrpc":"2.0","id":"0","error":{"code":-32601,"message":"the method eth_getBlock does not exist/is not available"}}
+---
+#ethGetLogs -- INVALID params
+"case_name": "ethGetLogs-- INVALID params"
+#url地址
+"url": "/api/v1/rpc/ethereum?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getLogs"
+  params: ["0xfe88c94d860f01a17f961bf41240c58553","0x0","latest"]
+  id: "0"
+"except":
+  code: 200
+  errDsc: {"jsonrpc":"2.0","id":"0","error":{"code":-32602,"message":"invalid argument 0: json: cannot unmarshal string into Go value of type filters.input"}}
+---
+#ethGetLogs -- invalid argument 0: invalid topic
+"case_name": "ethGetLogs -- invalid argument 0: invalid topic"
+#url地址
+"url": "/api/v1/rpc/ethereum?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getLogs"
+  params: [{"topics":[{"address": "0x8A8610B1444127Aa0B2b90Eeb5633794f902C535","topics": ["9b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"],"blockHash": "0x8243343df08b9751f5ca0c5f8c9c0460d8a9b6351066fae0acbd4d3e776de8bb"}]}]
+  id: "0"
+"except":
+  code: 200
+  errDsc: {"jsonrpc":"2.0","id":"0","error":{"code":-32602,"message":"invalid argument 0: invalid topic(s)"}}

@@ -1,0 +1,18 @@
+#Eth_accounts
+---
+#ethaccounts -- Successful
+"case_name": "ethaccounts -- Successful"
+#url地址
+"url": "/api/v1/rpc/ethereum?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_accounts"
+  params: []
+  id: 1
+"except":
+  code: 200
+  errDsc: {"jsonrpc":"2.0","id":1,"result":["0xb05146ed865f0ab592dd763bd84a2191700f3dfb","0x7c3e6c2544e3e4462e44530e9cda5e745c831c0b"]}

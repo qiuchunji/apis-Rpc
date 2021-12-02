@@ -1,0 +1,16 @@
+BASE:
+  #log等级
+  log_level: "debug"
+  #扩展名
+  log_extension: ".log"
+  test:
+    url: "https://api.theapis.io"
+
+
+email:
+  smtpserver: "smtp.163.com"
+  username: "*******y@163.com"
+  password: "********"
+  receiver:
+    - "********@qq.com"
+

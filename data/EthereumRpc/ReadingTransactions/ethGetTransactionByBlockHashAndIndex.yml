@@ -1,0 +1,18 @@
+#Eth_GetTransactionByBlockHashAndIndex
+---
+#ethGetTransactionByBlockHashAndIndex -- Successful
+"case_name": "ethGetTransactionByBlockHashAndIndex -- Successful"
+#url地址
+"url": "/api/v1/rpc/ethereum?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getTransactionByBlockHashAndIndex"
+  params: ["0x957daf6fad29ae97b4480f0ed1ae842a0350cedf06ea47010e2d6e84c0fe14fe", "0x0"]
+  id: 0
+"except":
+  code: 200
+  errDsc: {"jsonrpc":"2.0","id":0,"result":null}

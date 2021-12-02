@@ -1,0 +1,69 @@
+#bsc_getCode
+---
+#bscgetCode -- Successful
+"case_name": "bscgetCode -- Successful"
+#url地址
+"url": "/api/v1/rpc/binance-smart-chain?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getCode"
+  params: ["0xa8D145Dd3003817dA1DC83F838Ee5088B65Acf2e", "latest"]
+  id: 0
+"except":
+  code: 200
+  errDsc: {"jsonrpc":"2.0","id":0,"result":"0x"}
+---
+#bscgetCode -- INVALID API KEY
+"case_name": "bscgetCode -- INVALID API KEY"
+#url地址
+"url": "/api/v1/rpc/binance-smart-chain?apiKey=148458df-9a25-43b4-bf19-878d42cf"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getCode"
+  params: ["0xa8D145Dd3003817dA1DC83F838Ee5088B65Acf2e", "latest"]
+  id: 0
+"except":
+  code: 401
+  errDsc: {"error":"INVALID API KEY: 148458df-9a25-43b4-bf19-878d42cf"}
+---
+#bscgetCode -- INVALID method
+"case_name": "bscgetCode -- INVALID method"
+#url地址
+"url": "/api/v1/rpc/binance-smart-chain?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getBlock"
+  params: ["0xa8D145Dd3003817dA1DC83F838Ee5088B65Acf2e", "latest"]
+  id: 0
+"except":
+  code: 200
+  errDsc: {"jsonrpc":"2.0","id":0,"error":{"code":-32601,"message":"the method eth_getBlock does not exist/is not available"}}
+---
+#bscgetCode -- INVALID params
+"case_name": "bscgetCode-- INVALID params"
+#url地址
+"url": "/api/v1/rpc/binance-smart-chain?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getCode"
+  params: ["0xfe88c94d860f01a17f961bf41240c58553"]
+  id: 0
+"except":
+  code: 200
+  errDsc: {"jsonrpc":"2.0","id":0,"error":{"code":-32602,"message":"invalid argument 0: hex string has length 34, want 40 for common.Address"}}

@@ -1,0 +1,23 @@
+#Create_token ERC1155
+---
+#Create_token ERC721 -- Successful
+"case_name": "Create_token ERC1155 - Successful"
+#url地址
+"url": "/api/v1/tokens?apiKey=148458df-9a25-43b4-bf19-878d42cfe559&chain=ethereum&network=rinkeby"
+#headers
+"headers":
+  Content-Type: "application/json"
+#data
+data:
+  chain: "ethereum"
+  network: "rinkeby"
+  type: "APIS_ERC1155"
+  token:
+    name: "TheAPIS"
+    uri: "apis erc 1155"
+  sender: "0x0c623F6164Fca9a5d146917a93497E5946CC7340"
+  privateKey: "4b414498530f3e4fe8254e7584bcb8176c53d925185a1aaf6d3af88f1d129e74"
+#期望结果
+"except":
+  code: 200
+  errDsc: "BigNumber"

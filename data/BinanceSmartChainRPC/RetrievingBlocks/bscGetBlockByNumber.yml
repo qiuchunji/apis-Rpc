@@ -1,0 +1,69 @@
+#bsc_getBlockByNumber
+---
+#bscgetBlockByNumber -- Successful
+"case_name": "bscgetBlockByNumber -- Successful"
+#url地址
+"url": "/api/v1/rpc/binance-smart-chain?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getBlockByNumber"
+  params: ["0x6c597f", true]
+  id: "0"
+"except":
+  code: 200
+  errDsc: "0xe4b883e5bda9e7a59ee4bb99e9b1bc"
+---
+#bscgetBlockByNumber -- INVALID API KEY
+"case_name": "bscgetBlockByNumber -- INVALID API KEY"
+#url地址
+"url": "/api/v1/rpc/binance-smart-chain?apiKey=148458df-9a25-43b4-bf19-878d42cf"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getBlockByNumber"
+  params: ["0x6c597f", true]
+  id: "0"
+"except":
+  code: 401
+  errDsc: {"error":"INVALID API KEY: 148458df-9a25-43b4-bf19-878d42cf"}
+---
+#bscgetBlockByNumber -- INVALID method
+"case_name": "bscgetBlockByNumber -- INVALID method"
+#url地址
+"url": "/api/v1/rpc/binance-smart-chain?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getBlock"
+  params: ["0x6c597f", true]
+  id: "0"
+"except":
+  code: 200
+  errDsc: {"jsonrpc":"2.0","id":"0","error":{"code":-32601,"message":"the method eth_getBlock does not exist/is not available"}}
+---
+#bscgetBlockByNumber -- INVALID params
+"case_name": "bscgetBlockByNumber-- INVALID params"
+#url地址
+"url": "/api/v1/rpc/binance-smart-chain?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getBlockByNumber"
+  params: ["0xf","latest"]
+  id: "0"
+"except":
+  code: 200
+  errDsc: {"jsonrpc":"2.0","id":"0","error":{"code":-32602,"message":"invalid argument 1: json: cannot unmarshal string into Go value of type bool"}}

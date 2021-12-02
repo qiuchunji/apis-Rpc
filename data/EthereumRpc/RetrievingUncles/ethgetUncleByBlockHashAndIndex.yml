@@ -1,0 +1,18 @@
+#Eth_getUncleByBlockHashAndIndex
+---
+#ethgetUncleByBlockHashAndIndex -- Successful
+"case_name": "ethgetUncleByBlockHashAndIndex -- Successful"
+#url地址
+"url": "/api/v1/rpc/ethereum?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getUncleByBlockHashAndIndex"
+  params: ["0xb3b20624f8f0f86eb50dd04688409e5cea4bd02d700bf6e79e9384d47d6a5a35", "0x0"]
+  id: 0
+"except":
+  code: 200
+  errDsc: "0x824cce7c7c2ec6874b9fa9a9a898eb5f27cbaf3991dfa81084c3af60d1db618c"

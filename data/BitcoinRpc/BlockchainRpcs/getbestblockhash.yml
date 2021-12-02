@@ -1,0 +1,35 @@
+#getbestblockhash
+---
+#getbestblockhash -- Successful
+"case_name": "getbestblockhash -- Successful"
+#url地址
+"url": "/api/v1/rpc/bitcoin?apiKey=8b1cf553-a2d8-47a1-a4b3-1ce0b9fe8623"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  "jsonrpc": "1.0"
+  method: "getbestblockhash"
+  params: []
+  "id": "apis-core"
+"except":
+  code: 200
+  errDsc:
+---
+#getbestblockhash -- INVALID API KEY
+"case_name": "getbestblockhash -- INVALID API KEY"
+#url地址
+"url": "/api/v1/rpc/bitcoin?apiKey=148458df-9a25-43b4-bf19-878d42cf"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  "jsonrpc": "1.0"
+  method: "getbestblockhash"
+  params: []
+  "id": "apis-core"
+"except":
+  code: 401
+  errDsc: {"error":"INVALID API KEY: 148458df-9a25-43b4-bf19-878d42cf"}

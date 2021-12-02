@@ -1,0 +1,69 @@
+#Eth_GetStorageAt
+---
+#ethGetStorageAt -- Successful
+"case_name": "ethGetStorageAt -- Successful"
+#url地址
+"url": "/api/v1/rpc/ethereum?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getStorageAt"
+  params: ["0x295a70b2de5e3953354a6a8344e616ed314d7251","0x0","latest"]
+  id: "0"
+"except":
+  code: 200
+  errDsc: {"jsonrpc":"2.0","id":"0","result":"0x0000000000000000000000000000000000000000000000000000000000000000"}
+---
+#ethGetStorageAt -- INVALID API KEY
+"case_name": "ethGetStorageAt -- INVALID API KEY"
+#url地址
+"url": "/api/v1/rpc/ethereum?apiKey=148458df-9a25-43b4-bf19-878d42cf"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getStorageAt"
+  params: ["0x295a70b2de5e3953354a6a8344e616ed314d7251","0x0","latest"]
+  id: "0"
+"except":
+  code: 401
+  errDsc: {"error":"INVALID API KEY: 148458df-9a25-43b4-bf19-878d42cf"}
+---
+#ethGetStorageAt -- INVALID method
+"case_name": "ethGetStorageAt -- INVALID method"
+#url地址
+"url": "/api/v1/rpc/ethereum?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getBlock"
+  params: ["0x295a70b2de5e3953354a6a8344e616ed314d7251","0x0","latest"]
+  id: "0"
+"except":
+  code: 200
+  errDsc: {"jsonrpc":"2.0","id":"0","error":{"code":-32601,"message":"the method eth_getBlock does not exist/is not available"}}
+---
+#ethGetStorageAt -- INVALID params
+"case_name": "ethGetStorageAt-- INVALID params"
+#url地址
+"url": "/api/v1/rpc/ethereum?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getStorageAt"
+  params: ["0xfe88c94d860f01a17f961bf41240c58553","0x0","latest"]
+  id: "0"
+"except":
+  code: 200
+  errDsc: {"jsonrpc":"2.0","id":"0","error":{"code":-32602,"message":"invalid argument 0: hex string has length 34, want 40 for common.Address"}}

@@ -1,0 +1,18 @@
+#bsc_getUncleByBlockNumberAndIndex
+---
+#bscgetUncleByBlockNumberAndIndex -- Successful
+"case_name": "bscgetUncleByBlockNumberAndIndex -- Successful"
+#url地址
+"url": "/api/v1/rpc/binance-smart-chain?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getUncleByBlockNumberAndIndex"
+  params: ["0x29c", "0x0"]
+  id: 0
+"except":
+  code: 200
+  errDsc: "0x932bdf904546a2287a2c9b2ede37925f698a7657484b172d4e5184f80bdd464d"

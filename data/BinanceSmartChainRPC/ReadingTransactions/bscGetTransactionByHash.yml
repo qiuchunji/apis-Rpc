@@ -1,0 +1,69 @@
+#bsc_getTransactionByHash
+---
+#bscgetTransactionByHash -- Successful
+"case_name": "bscgetTransactionByHash -- Successful"
+#url地址
+"url": "/api/v1/rpc/binance-smart-chain?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getTransactionByHash"
+  params: ["0x2a87460cfdcc57cf420677f72e2905eccd3c681a58975eab4d8a0360be5dec84"]
+  id: 0
+"except":
+  code: 200
+  errDsc: {"jsonrpc":"2.0","id":0,"result":{"blockHash":"0x3b7334d22c25dfb799f72231a00746e31d3d052fe3d14a741e69ea4924c5e477","blockNumber":"0xa428aa","from":"0x340d693ed55d7ba167d184ea76ea2fd092a35bdc","gas":"0x5208","gasPrice":"0x147d357000","hash":"0x2a87460cfdcc57cf420677f72e2905eccd3c681a58975eab4d8a0360be5dec84","input":"0x","nonce":"0x57343","to":"0x46c0e2cc49ec0ec212640dfc5315adedd562f8c9","transactionIndex":"0xb1","value":"0x90744cd5d24c00","type":"0x0","v":"0x1c","r":"0x8d1b48232d0a91c68bcca294c8da4d9cfd7bfa9d22b5399a40a39abfacaf8a9e","s":"0x7b54e4a9b1b014d6eb84c3811b64f8ca88314d6743989061ff8c9855fdcb9eac"}}
+---
+#bscgetTransactionByHash -- INVALID API KEY
+"case_name": "bscgetTransactionByHash -- INVALID API KEY"
+#url地址
+"url": "/api/v1/rpc/binance-smart-chain?apiKey=148458df-9a25-43b4-bf19-878d42cf"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getTransactionByHash"
+  params: ["0x2a87460cfdcc57cf420677f72e2905eccd3c681a58975eab4d8a0360be5dec84"]
+  id: 0
+"except":
+  code: 401
+  errDsc: {"error":"INVALID API KEY: 148458df-9a25-43b4-bf19-878d42cf"}
+---
+#bscgetTransactionByHash -- INVALID method
+"case_name": "bscgetTransactionByHash -- INVALID method"
+#url地址
+"url": "/api/v1/rpc/binance-smart-chain?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getBlock"
+  params: ["0x2a87460cfdcc57cf420677f72e2905eccd3c681a58975eab4d8a0360be5dec84"]
+  id: 0
+"except":
+  code: 200
+  errDsc: {"jsonrpc":"2.0","id":0,"error":{"code":-32601,"message":"the method eth_getBlock does not exist/is not available"}}
+---
+#bscgetTransactionByHash -- INVALID params
+"case_name": "bscgetTransactionByHash-- INVALID params"
+#url地址
+"url": "/api/v1/rpc/binance-smart-chain?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getTransactionByHash"
+  params: ["0xfe88c94d860f01a17f961bf41240c58553"]
+  id: 0
+"except":
+  code: 200
+  errDsc: {"jsonrpc":"2.0","id":0,"error":{"code":-32602,"message":"invalid argument 0: hex string has length 34, want 64 for common.Hash"}}

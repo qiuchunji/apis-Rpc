@@ -1,0 +1,18 @@
+#bsc_newBlockFilter
+---
+#bscnewBlockFilter -- Successful
+"case_name": "bscnewBlockFilter -- Successful"
+#url地址
+"url": "/api/v1/rpc/binance-smart-chain?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_newBlockFilter"
+  params: []
+  id: 88
+"except":
+  code: 200
+  errDsc: "result"

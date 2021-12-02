@@ -1,0 +1,18 @@
+#Eth_net_version
+---
+#ethnet_version -- Successful
+"case_name": "ethnet_version -- Successful"
+#url地址
+"url": "/api/v1/rpc/ethereum?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "net_version"
+  params: []
+  id: 67
+"except":
+  code: 200
+  errDsc: {"jsonrpc":"2.0","id":67,"result":"1"}

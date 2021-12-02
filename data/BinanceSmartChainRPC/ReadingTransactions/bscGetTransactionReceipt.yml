@@ -1,0 +1,69 @@
+#bsc_getTransactionReceipt
+---
+#bscgetTransactionReceipt -- Successful
+"case_name": "bscgetTransactionReceipt -- Successful"
+#url地址
+"url": "/api/v1/rpc/binance-smart-chain?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getTransactionReceipt"
+  params: ["0x957daf6fad29ae97b4480f0ed1ae842a0350cedf06ea47010e2d6e84c0fe14fe"]
+  id: 0
+"except":
+  code: 200
+  errDsc: {"jsonrpc":"2.0","id":0,"result":{"blockHash":"0x84bc5950c09843ad0fa2cf3c2de8b21a5fe548f1a2bd2987e0a189a503f73c82","blockNumber":"0xa4292b","contractAddress":null,"cumulativeGasUsed":"0x5143fd","effectiveGasPrice":"0x131794b400","from":"0x340d693ed55d7ba167d184ea76ea2fd092a35bdc","gasUsed":"0x5208","logs":[],"logsBloom":"0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","status":"0x1","to":"0xa8d145dd3003817da1dc83f838ee5088b65acf2e","transactionHash":"0x957daf6fad29ae97b4480f0ed1ae842a0350cedf06ea47010e2d6e84c0fe14fe","transactionIndex":"0x55","type":"0x0"}}
+---
+#bscgetTransactionReceipt -- INVALID API KEY
+"case_name": "bscgetTransactionReceipt -- INVALID API KEY"
+#url地址
+"url": "/api/v1/rpc/binance-smart-chain?apiKey=148458df-9a25-43b4-bf19-878d42cf"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getTransactionReceipt"
+  params: ["0x957daf6fad29ae97b4480f0ed1ae842a0350cedf06ea47010e2d6e84c0fe14fe"]
+  id: 0
+"except":
+  code: 401
+  errDsc: {"error":"INVALID API KEY: 148458df-9a25-43b4-bf19-878d42cf"}
+---
+#bscgetTransactionReceipt -- INVALID method
+"case_name": "bscgetTransactionReceipt -- INVALID method"
+#url地址
+"url": "/api/v1/rpc/binance-smart-chain?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getBlock"
+  params: ["0x957daf6fad29ae97b4480f0ed1ae842a0350cedf06ea47010e2d6e84c0fe14fe"]
+  id: 0
+"except":
+  code: 200
+  errDsc: {"jsonrpc":"2.0","id":0,"error":{"code":-32601,"message":"the method eth_getBlock does not exist/is not available"}}
+---
+#bscgetTransactionReceipt -- INVALID params
+"case_name": "bscgetTransactionReceipt-- INVALID params"
+#url地址
+"url": "/api/v1/rpc/binance-smart-chain?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getTransactionReceipt"
+  params: ["0xfe88c94d860f01a17f961bf41240c58553"]
+  id: 0
+"except":
+  code: 200
+  errDsc: {"jsonrpc":"2.0","id":0,"error":{"code":-32602,"message":"invalid argument 0: hex string has length 34, want 64 for common.Hash"}}

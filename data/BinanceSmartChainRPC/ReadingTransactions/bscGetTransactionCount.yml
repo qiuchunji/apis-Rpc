@@ -1,0 +1,18 @@
+#bsc_getTransactionCount
+---
+#bscgetTransactionCount -- Successful
+"case_name": "bscgetTransactionCount -- Successful"
+#url地址
+"url": "/api/v1/rpc/binance-smart-chain?apiKey=8b1cf553-a2d8-47a1-a4b3-1ce0b9fe8623"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getTransactionCount"
+  params: ["0x340d693ED55d7bA167D184ea76Ea2Fd092a35BDc","latest"]
+  id: 0
+"except":
+  code: 200
+  errDsc:

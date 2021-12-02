@@ -1,0 +1,16 @@
+#get defi/rates
+---
+#get defi/rates -- Successful
+"case_name": "get defi/rates - Successful"
+#url地址
+"url": "/api/v1/ethereum/defi/rates?"
+#headers
+"headers":
+  Content-Type: "application/json"
+#json
+data:
+  apiKey: "148458df-9a25-43b4-bf19-878d42cfe559"
+#期望结果
+"except":
+  code: 200
+  errDsc: "Basic Attention Token"

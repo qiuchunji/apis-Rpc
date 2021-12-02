@@ -1,0 +1,20 @@
+#ERC1155 token balance
+---
+#ERC1155 token balance -- Successful
+"case_name": "ERC1155 token balance -- Successful"
+#url地址
+"url": "/api/v1/tokens/0x6A3Cd6a4f7288a43921Ff88796cb75D9e36A8b9A/erc1155/balance?"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  tokenAddress: "0x85c95902239797b69beab4e617411fb94981a2a9"
+  type: "erc1155"
+  id: 1
+  apiKey: "148458df-9a25-43b4-bf19-878d42cfe559"
+  chain: "ethereum"
+  network: "rinkeby"
+"except":
+  code: 200
+  errDsc: {"result":"130"}

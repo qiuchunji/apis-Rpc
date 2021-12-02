@@ -1,0 +1,18 @@
+#bsc_sendRawTransaction
+---
+#bscsendRawTransaction -- Successful
+"case_name": "bscsendRawTransaction -- Successful"
+#url地址
+"url": "/api/v1/rpc/binance-smart-chain?apiKey=8b1cf553-a2d8-47a1-a4b3-1ce0b9fe8623"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_sendRawTransaction"
+  params: ["0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb970870f072445675"]
+  id: 1
+"except":
+  code: 200
+  errDsc:

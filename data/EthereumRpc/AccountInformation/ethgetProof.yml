@@ -1,0 +1,18 @@
+#Eth_getProof
+---
+#ethgetProof -- Successful
+"case_name": "ethgetProof -- Successful"
+#url地址
+"url": "/api/v1/rpc/ethereum?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_getProof"
+  params: ["0x7F0d15C7FAae65896648C8273B6d7E43f58Fa842",["0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421"],"latest"]
+  id: 1
+"except":
+  code: 200
+  errDsc: "0x7f0d15c7faae65896648c8273b6d7e43f58fa842"

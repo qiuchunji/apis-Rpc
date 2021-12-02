@@ -1,0 +1,18 @@
+#bsc_subscribe
+---
+#bscsubscribe -- Successful
+"case_name": "bscsubscribe -- Successful"
+#url地址
+"url": "/api/v1/rpc/binance-smart-chain?apiKey=8b1cf553-a2d8-47a1-a4b3-1ce0b9fe8623"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_subscribe"
+  params: ["newHeads", {"includeTransactions": true}]
+  id: 1
+"except":
+  code: 200
+  errDsc:

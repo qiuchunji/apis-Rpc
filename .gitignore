@@ -1,0 +1,8 @@
+.idea
+.idea/
+.__pycache__
+*.pyc
+.DS_Store
+.pytest_cache
+report
+report/

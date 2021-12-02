@@ -1,0 +1,17 @@
+#Create_wallet
+---
+#CreateWallet -- Successful
+"case_name": "CreateWallet - Successful"
+#url地址
+"url": "/api/v1/wallets?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#data
+data:
+  chain: "ethereum"
+  network: "rinkeby"
+#期望结果
+"except":
+  code: 200
+  errDsc: address

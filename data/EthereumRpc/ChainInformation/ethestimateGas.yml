@@ -1,0 +1,18 @@
+#Eth_estimateGas
+---
+#ethestimateGas -- Successful
+"case_name": "ethestimateGas -- Successful"
+#url地址
+"url": "/api/v1/rpc/ethereum?apiKey=148458df-9a25-43b4-bf19-878d42cfe559"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_estimateGas"
+  params: [{"to": "0xa8D145Dd3003817dA1DC83F838Ee5088B65Acf2e"}]
+  id: 1
+"except":
+  code: 200
+  errDsc: {"jsonrpc":"2.0","id":1,"result":"0x5208"}

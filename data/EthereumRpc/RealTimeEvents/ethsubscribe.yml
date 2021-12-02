@@ -1,0 +1,18 @@
+#Eth_subscribe
+---
+#ethsubscribe -- Successful
+"case_name": "ethsubscribe -- Successful"
+#url地址
+"url": "/api/v1/rpc/ethereum?apiKey=8e650531-7ef2-437b-885e-2e190da1a380"
+#headers
+"headers":
+  Content-Type: "application/json"
+#"data"
+data:
+  jsconrpc: "2.0"
+  method: "eth_subscribe"
+  params: ["newHeads", {"includeTransactions": true}]
+  id: 1
+"except":
+  code: 200
+  errDsc:
